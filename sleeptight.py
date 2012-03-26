@@ -1,5 +1,4 @@
 #!/usr/bin/python
-
 import argparse
 import datetime
 from datetime import timedelta
@@ -13,8 +12,7 @@ dozeTime = 14
 day_str  = datetime.today().strftime("%Y-%m-%d")
 
 def CalculateCycles(tstart,sleep,countCycles):
-# Calculate the sleep cycles required given a sleeptime or back calculate if 
-# wakeup time is given
+# Calculate the sleep cycles required given a sleeptime 
      cycle = timedelta(minutes = SleepCycleTime)
      doze  = timedelta(minutes = dozeTime)
      SleepCycles = [cycle*i for i in range(*countCycles)]
@@ -61,8 +59,6 @@ if __name__ == "__main__":
      elif args.now:
           print "Wake up at these times (assumes an avg. 14 minutes to doze off)"
           sleeptime = datetime.now()
-          print "\n".join(SleepNow(sleeptime))
-    
-
+          print "\n".join(SleepNow(sleeptime))    
 
 
